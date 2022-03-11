@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ttt {
+  width: 80vmin;
+  height: 80vmin;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.ttt-field {
+  background-color: hotpink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ttt-field-circle::before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.ttt-field-cross::before {
+  content: "";
+  transform: rotate(45deg);
+  display: block;
+  width: 50%;
+  height: 50%;
+  background-image: linear-gradient(
+      transparent 40%,
+      white 40%,
+      white 60%,
+      transparent 60%
+    ),
+    linear-gradient(
+      to right,
+      transparent 40%,
+      white 40%,
+      white 60%,
+      transparent 60%
+    );
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.game-over::after {
+  content: "Game Over - press SPACE to start new game -";
+  font-family: monospace;
+  font-size: 2rem;
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  height: 30%;
+  background-color: silver;
+  color: #b4ff69;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
